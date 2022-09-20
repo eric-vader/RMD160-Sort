@@ -193,8 +193,8 @@ static void sort_file(const char* in_filename, const char* out_filename)
 	}
 
 	int64_t N = 0;
-	_fseeki64(fd, 0, SEEK_END);
-	int64_t TOTAL = _ftelli64(fd);
+	fseek(fd, 0, SEEK_END);
+	int64_t TOTAL = ftell(fd);
 	N = TOTAL / RMD160LENGTH;
 	rewind(fd);
 
